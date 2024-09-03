@@ -1,0 +1,29 @@
+- name: Copy prometheus config
+  ansible.builtin.template:
+    src: prometheus.yml
+    dest: /opt/prometheus/prometheus.yml
+
+- name: Copy prometheus config - record file
+  ansible.builtin.template:
+    src: record.yml
+    dest: /opt/prometheus/record.yml
+
+- name: Copy prometheus config - alerts file
+  ansible.builtin.template:
+    src: alerts.yml
+    dest: /opt/prometheus/alerts.yml
+
+- name: Restart prometheus
+  ansible.builtin.systemd:
+    name: prometheus
+    state: restarted
+
+- name: Copy alertmanager config
+  ansible.builtin.template:
+    src: alertmanager.yml
+    dest: /opt/alertmanager/alertmanager.yml
+
+- name: Restart alertmanager
+  ansible.builtin.systemd:
+    name: alertmanager
+    state: restarted
