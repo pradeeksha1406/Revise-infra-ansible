@@ -49,7 +49,7 @@
     name: mysql
 
 - name: load the schema
-  ansible.builtin.shell: mysql -h mysql.techadda.co -uroot -pExpenseApp@1 < /app/schema/backend.sql
+  ansible.builtin.shell: mysql -h backend.techadda.co -uroot -pExpenseApp@1 < /app/schema/backend.sql
 
 - name: starting backed service
   ansible.builtin.systemd:
