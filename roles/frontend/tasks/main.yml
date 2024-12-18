@@ -43,12 +43,12 @@
     state: restarted
     enabled: yes
 
-- name: Install filebeat
-  ansible.builtin.import_role:
-    name: elk
-    tasks_from: filebeat
-
-- name: Install Node exporter
-  ansible.builtin.import_role:
-    name: prometheus
-    tasks_from: node-exporter
+#- name: Install filebeat
+#  ansible.builtin.import_role:
+#    name: elk
+#    tasks_from: filebeat
+#
+#- name: Install Node exporter
+#  ansible.builtin.import_role:
+#    name: prometheus
+#    tasks_from: node-exporter
